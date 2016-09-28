@@ -1,0 +1,29 @@
+﻿@model IEnumerable<StockExchangeClient.Models.StockManagerVM>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Stock Code</th>
+            <th>Stock Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @{var integer = 1; }
+
+        @foreach (var item in Model)
+            {
+            <tr>
+                <th scope="row">@(integer++)</th>
+                <td>@item.Stock</td>
+                <td>@item.Price</td>
+                <td><a href="#confirmDelete" title="Delete" data-toggle="modal" data-id="@item.StockId"><i class="glyphicon glyphicon-trash"></i></a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
